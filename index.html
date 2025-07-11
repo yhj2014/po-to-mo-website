@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PO to MO 转换器下载</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>PO to MO 转换器</h1>
+            <p>一个简单易用的PO文件到MO文件的转换工具</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="download-section">
+            <h2><i class="fas fa-download"></i> 下载文件</h2>
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="card-header">
+                        <i class="fab fa-python"></i>
+                        <h3>Python 脚本</h3>
+                    </div>
+                    <p>主转换程序，使用Tkinter GUI界面</p>
+                    <a href="https://raw.githubusercontent.com/yhj2014/po-to-mo-website/main/download/po_to_mo_converter.py" 
+                       class="download-btn" download>
+                        <i class="fas fa-download"></i> 下载
+                    </a>
+                </div>
+
+                <div class="download-card">
+                    <div class="card-header">
+                        <i class="fab fa-windows"></i>
+                        <h3>EXE 打包脚本</h3>
+                    </div>
+                    <p>将Python脚本打包为Windows可执行文件</p>
+                    <a href="https://raw.githubusercontent.com/yhj2014/po-to-mo-website/main/download/build_exe.ps1" 
+                       class="download-btn" download>
+                        <i class="fas fa-download"></i> 下载
+                    </a>
+                </div>
+
+                <div class="download-card">
+                    <div class="card-header">
+                        <i class="fab fa-android"></i>
+                        <h3>APK 打包脚本</h3>
+                    </div>
+                    <p>将Python脚本打包为Android应用</p>
+                    <a href="https://raw.githubusercontent.com/yhj2014/po-to-mo-website/main/download/build_apk.ps1" 
+                       class="download-btn" download>
+                        <i class="fas fa-download"></i> 下载
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="tutorial-section">
+            <h2><i class="fas fa-graduation-cap"></i> 使用教程</h2>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="manual">手动打包教程</button>
+                <button class="tab-btn" data-tab="script">脚本打包教程</button>
+            </div>
+
+            <div class="tab-content active" id="manual-tab">
+                <h3>手动打包步骤</h3>
+                <ol>
+                    <li>下载Python脚本 <code>po_to_mo_converter.py</code></li>
+                    <li>确保已安装Python 3.6+</li>
+                    <li>安装所需依赖：
+                        <pre><code>pip install pyinstaller</code></pre>
+                    </li>
+                    <li>打包为EXE：
+                        <pre><code>pyinstaller --onefile --windowed --name POtoMOConverter po_to_mo_converter.py</code></pre>
+                    </li>
+                    <li>生成的EXE文件在<code>dist</code>目录中</li>
+                </ol>
+
+                <h3>Android打包准备</h3>
+                <ol>
+                    <li>安装Java JDK 11+</li>
+                    <li>安装Android Studio和SDK</li>
+                    <li>安装BeeWare工具：
+                        <pre><code>pip install briefcase</code></pre>
+                    </li>
+                    <li>初始化项目配置</li>
+                </ol>
+            </div>
+
+            <div class="tab-content" id="script-tab">
+                <h3>使用打包脚本</h3>
+                <h4>Windows EXE打包：</h4>
+                <ol>
+                    <li>下载<code>build_exe.ps1</code>脚本</li>
+                    <li>右键脚本，选择"使用PowerShell运行"（需管理员权限）</li>
+                    <li>脚本会自动安装所需依赖并打包</li>
+                    <li>生成的EXE文件在<code>dist_exe</code>目录中</li>
+                </ol>
+
+                <h4>Android APK打包：</h4>
+                <ol>
+                    <li>下载<code>build_apk.ps1</code>脚本</li>
+                    <li>右键脚本，选择"使用PowerShell运行"（需管理员权限）</li>
+                    <li>脚本会自动安装JDK、Android SDK和BeeWare工具</li>
+                    <li>首次运行可能需要较长时间下载依赖</li>
+                    <li>生成的APK文件在<code>dist_apk</code>目录中</li>
+                </ol>
+
+                <div class="note">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <strong>注意：</strong> APK打包脚本需要稳定的网络连接，首次运行可能需要30分钟以上完成环境配置。
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 PO to MO 转换器 | 由 yhj2014 开发</p>
+            <p>
+                <a href="https://github.com/yhj2014/po-to-mo-website" target="_blank">
+                    <i class="fab fa-github"></i> GitHub仓库
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
